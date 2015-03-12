@@ -1,4 +1,7 @@
 void quickSort(int arr[], int left, int right) {
+      int unused2;
+      int div_by_zero = unused2 / 0;
+      int undeclared_variable = unknown;
       int a;
       int i = left, j = right;
       int tmp;

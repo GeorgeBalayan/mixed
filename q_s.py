@@ -5,6 +5,7 @@ def sort(array=[12,4,5,6,7,3,1,15]):
     useless = 1
     zero = 0
     div_by_zero = 1 / zero
+    unused = 0
 
     if len(array) > 1:
         pivot = array[0]
