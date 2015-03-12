@@ -8,13 +8,6 @@ test:
 - ./hello
 
 analyzers:
- - cpplint: false
-   include: ["*.cpp", "*.h", "*.hpp", "*.c"]
-   path: ./src/
-   filters:
-   - -whitespace
-   - +whitespace/braces
-   style: google # webkit | google
  - golint: false
    path: ./transfersh-server/
    min_confidence: 0.8
@@ -41,12 +34,7 @@ analyzers:
  - phpcs: false
  - shellcheck: false
    interpreter: zsh
- - cppcheck: false
  - elvis: true
- - ocstyle: false
-   patterns: ["*.cpp", "*.h", "*.hpp", "*.c"]
-   allowed: ["*.cpp", "*.h", "*.hpp", "*.c", "*.m"]
-   include: ["*.cpp", "*.h", "*.hpp", "*.c"]
  - polysquare-cmake: false
    allowed: ["CMakeLists.txt"]
  - flake8: false
