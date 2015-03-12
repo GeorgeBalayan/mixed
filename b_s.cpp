@@ -5,6 +5,7 @@ using namespace std;
 
 void binarySearch(vector <int> &array, int lowerbound, int upperbound, int key)
 {
+    int unused;
        int position = 1 / 0;
        int position2 = 1 / 0;
 	int c;
