@@ -6,6 +6,7 @@ public class MyQuickSort {
     private int length;
  
     public void sort(int[] inputArr) {
+        unused = 1
          
         if (inputArr == null || inputArr.length == 0) {
             return;

@@ -1,0 +1,56 @@
+platform: ubuntu # | osx
+
+build:
+- make clean
+- make
+
+test:
+- ./hello
+
+analyzers:
+ - cpplint: false
+   include: ["*.cpp", "*.h", "*.hpp", "*.c"]
+   path: ./src/
+   filters:
+   - -whitespace
+   - +whitespace/braces
+   style: google # webkit | google
+ - golint: false
+   path: ./transfersh-server/
+   min_confidence: 0.8
+ - govet: false 
+   path: ./transfersh-server/
+ - jslint: false
+   params: 
+   - evil
+ - eshint: false
+   params: test2
+ - dartanalyzer: true
+ - jsxhint: false
+ - jshint: false
+ - eslint: false
+ - coffeelint: true
+ - scalastyle: true
+ - rubocop: false
+   targets: ["."]
+ - csslint: false
+   errors:
+   warnings:
+   ignore:
+   exclude-list:
+ - phpcs: false
+ - shellcheck: false
+   interpreter: zsh
+ - cppcheck: false
+ - elvis: true
+ - ocstyle: false
+   patterns: ["*.cpp", "*.h", "*.hpp", "*.c"]
+   allowed: ["*.cpp", "*.h", "*.hpp", "*.c", "*.m"]
+   include: ["*.cpp", "*.h", "*.hpp", "*.c"]
+ - polysquare-cmake: false
+   allowed: ["CMakeLists.txt"]
+ - flake8: false
+ - pmd: false
+ - markdownlint: true
+ - checkstyle: false
+   style: google # | sun
